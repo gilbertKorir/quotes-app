@@ -1,4 +1,4 @@
-<div class="container-fluid cover-container text-white">
+<div class="container-fluid cover-container pb-5 text-white">
     <h5 class ="text-center pt-4">Welcome to our Quotes App. Feel free to add, down or upvote or Delete 
         <br> the vote you don't like.</h5>
         <div class="row ">
@@ -20,10 +20,17 @@
             <div class="col-sm-7">
                 <div class="container mt-4">
                     <p class="text-center">Add a Quote below:</p>
-                    <div class="card text-black" style="width: 18rem;">
+                    <div class="mx-5">
+                        <!-- <app-quotes-form></app-quotes-form> -->
+                        <app-quotes-form></app-quotes-form>
+                    </div>
+                    <div class="card mx-5 pt-5 text-center text-black" style="width: 600px;">
                         <div class="card-body">
-                            <div *ngFor="let quote of quotes; let i= index">
-                                <p>{{quote.quote}}</p>
+                            <div *ngFor="let quote of myQuotes; let i= index">
+                                <h4 class="card-title" appHighlightQoute >{{quote.title}}</h4>
+                                <p class="card-text" id="param">{{quote.quote}}</p>
+                                <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
+                                <app-quote-details></app-quote-details>
                             </div>
                         </div>
                     </div>

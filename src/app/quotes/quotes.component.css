@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 .cover-container{
-    height: 100vh;
+    height: auto;
     background: url('/assets/images/bng.jpeg'), rgb(231, 228, 221);
     background-size: cover;
 }
-.first-quote{
+.first-quote, .links{
     height: 500px;
 }
 #wangari{

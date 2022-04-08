@@ -17,7 +17,7 @@ export class QuotesComponent implements OnInit {
       return <any>new Date(b.datePosted) - <any>new Date(a.datePosted);
     });
   }
-
+  
   constructor() { }
 
   ngOnInit(): void {
