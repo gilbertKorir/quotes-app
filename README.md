@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # QuotesApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+=======
+# QoutesApp
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+>>>>>>> ffdd058f93d75a366dc563c755f034041532d98c
 
 ## Development server
 
