@@ -24,9 +24,9 @@
                         <!-- <app-quotes-form></app-quotes-form> -->
                         <app-quotes-form (add)="addedQuote($event)"></app-quotes-form>
                     </div>
-                    <div class="card mx-5 pt-5 text-center text-black" style="width: 600px;">
+                    <div class="card mx-2 pt-5 text-center text-black">
                         <div class="all-cards">
-                            <div *ngFor="let quote of myQuotes; let i= index" class="card" style="width: 24rem;">
+                            <div *ngFor="let quote of myQuotes; let i= index" class="card" style="width: 15rem;">
                                 <div class="card-body">
                                     <h4 class="card-title" appHighlightQoute >{{quote.title}}</h4>
                                     <p class="card-text" id="param">{{quote.quote}}</p>
