@@ -31,18 +31,34 @@
                                     <span id="when" style="float: right;">{{quote.datePosted|datePipe}} days ago.</span>
                                     <h4 class="card-title pt-3" appHighlightQoute>{{quote.title}}</h4>
                                     <p class="card-text pt-3" id="param" >{{quote.quote}}</p>
-                                    <h6 class="card-subtitle mb-2 text-muted"> --{{quote.author}}-- </h6>                                    
-                                    <span class="card-subtitle mb-2">By: <span id="name">{{quote.name}}</span><br>
+                                    <h6 class="card-subtitle mb-2 text-center text-muted"> --{{quote.author}}-- </h6>                                    
+                                    <span class="card-subtitle mb-2">By: <span id="name">{{quote.name}}</span>
                                     <span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
                                     <p class="text-center pt-3 pb-2"><button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >See More</button></p>
                                     <div>
-                                        <app-quote-details *ngIf="quote.Info" (isRead)='quoteDelete($event,i)'></app-quote-details>
+                                        <app-quote-details *ngIf="quote.Info" (isRead)='quotoDelete($event,i)'></app-quote-details>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-     
+
+        <div class="popularQuote" >
+
+            <h4>Popular Quotes</h4>
+            <div class="card popular text-black" *ngFor="let popular of populars;let i=index" appHighlight>
+                <div class="card-header">
+                    <h4 >{{popular.id}} <br><i class="fas  fa-quote-left    "></i> <br> {{popular.quote}}</h4>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title"><small class="text">Author ~ </small>{{popular.author}}</h6>
+                    <p class="card-text">{{popular.likes}} Upvotes</p>
+                </div>
+                
+            </div>
+
+        </div>
+        
                 </div>
                </div>
             <div class="col-sm-1 d-flex flex-column bg-white text-center pt-5 links">

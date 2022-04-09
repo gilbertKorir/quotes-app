@@ -14,6 +14,8 @@ export class QuoteDetailsComponent implements OnInit {
   upvotes: number = 0;
   upvote(){
     this.upvotes++;
+    // var up=this.quotes[index].likes+1;
+    // this.quotes[index].likes=up;
   }
   downvotes: number = 0;
   downvote(){
