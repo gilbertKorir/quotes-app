@@ -1,6 +1,5 @@
-<h6 class="card-subtitle mb-2 text-muted"></h6>
-<div class="container-fluid pt-3 pb-3" id="buttons">
-  <button class="btn btn-sm btn-success" (click)="upvote()">Upvote</button>&nbsp;&nbsp;{{upvotes}}&nbsp;&nbsp;
-  <button class="btn btn-sm btn-warning" id="hate" (click)="downvote()">Downvote</button> &nbsp;&nbsp;{{downvotes}}&nbsp;&nbsp;
+<div class="container-fluid detail pt-3 pb-3">
+  <button class="btn btn-sm btn-success" (click)="upvote()">Upvote</button>: &nbsp;&nbsp;&nbsp;{{upvotes}} <br><br>
+  <button class="btn btn-sm btn-warning" id="hate" (click)="downvote()">Downvote</button> &nbsp;{{downvotes}} <br> <br>
   <button class="btn btn-sm btn-danger" id="del" (click)='deleteQuote(true)'>Delete</button> 
 </div>

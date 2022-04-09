@@ -24,16 +24,20 @@
                         <!-- <app-quotes-form></app-quotes-form> -->
                         <app-quotes-form (add)="addedQuote($event)"></app-quotes-form>
                     </div>
-                    <div class="mx-2 pt-5 text-center text-black">
+                    <div class="mx-2 pt-5 text-black">
                         <div class="all-cards">
-                            <div *ngFor="let quote of myQuotes; let i= index" class="card" style="width: 15rem;">
+                            <div *ngFor="let quote of myQuotes; let i= index" class="card" style="width: 24rem;">
                                 <div class="card-body ">
-                                    <h4 class="card-title pt-2" appHighlightQoute >{{quote.title}}</h4>
-                                    <p class="card-text" id="param">{{quote.quote}}</p>
-                                    <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><br>
+                                    <span id="when" style="float: right;">{{quote.datePosted|datePipe}} days ago.</span>
+                                    <h4 class="card-title pt-3" appHighlightQoute>{{quote.title}}</h4>
+                                    <p class="card-text pt-3" id="param" >{{quote.quote}}</p>
+                                    <h6 class="card-subtitle mb-2 text-muted"> --{{quote.author}}-- </h6>                                    
+                                    <span class="card-subtitle mb-2">By: <span id="name">{{quote.name}}</span><br>
                                     <span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
-                                    <br><br><button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >See More</button>
-                                    <app-quote-details *ngIf="quote.Info" (isRead)='quoteDelete($event,i)'></app-quote-details>
+                                    <br><br><button (click)='displayInfo(i)' class="btn btn-info btn-sm text-center" id="quotes-button" >See More</button>
+                                    <div>
+                                        <app-quote-details *ngIf="quote.Info" (isRead)='quoteDelete($event,i)'></app-quote-details>
+                                    </div>
                                 </div>
                             </div>
                         </div>
