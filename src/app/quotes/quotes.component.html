@@ -22,15 +22,16 @@
                     <p class="text-center">Add a Quote below:</p>
                     <div class="mx-5">
                         <!-- <app-quotes-form></app-quotes-form> -->
-                        <app-quotes-form></app-quotes-form>
+                        <app-quotes-form (add)="addedQuote($event)"></app-quotes-form>
                     </div>
                     <div class="card mx-5 pt-5 text-center text-black" style="width: 600px;">
-                        <div class="card-body">
-                            <div *ngFor="let quote of myQuotes; let i= index">
+                        <div *ngFor="let quote of myQuotes; let i= index">
+                            <div class="card-body">
                                 <h4 class="card-title" appHighlightQoute >{{quote.title}}</h4>
                                 <p class="card-text" id="param">{{quote.quote}}</p>
                                 <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
-                                <app-quote-details></app-quote-details>
+                                <br><br><button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >See More</button>
+                                <app-quote-details (isRead)='quoteDelete($event,i)'></app-quote-details>
                             </div>
                         </div>
                     </div>

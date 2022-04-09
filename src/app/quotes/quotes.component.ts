@@ -17,6 +17,25 @@ export class QuotesComponent implements OnInit {
       return <any>new Date(b.datePosted) - <any>new Date(a.datePosted);
     });
   }
+  addedQuote(quote: Quotes){
+    let arraysize = this.quotes.length;
+    quote.id = arraysize+1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
+  quoteDelete(isRead: any, index: number){
+    if (isRead) {
+      let toDelete = confirm(`Are you sure you want to delete this Quote?`)
+      if(toDelete){
+        this.quotes.splice(index,1);
+      }
+      
+    }
+  }
+ 
+  displayInfo(index: number){
+    this.quotes[index].Info = !this.quotes[index].Info;
+  }
   
   constructor() { }
 
