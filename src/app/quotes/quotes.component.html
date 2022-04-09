@@ -31,7 +31,7 @@
                                 <p class="card-text" id="param">{{quote.quote}}</p>
                                 <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
                                 <br><br><button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >See More</button>
-                                <app-quote-details (isRead)='quoteDelete($event,i)'></app-quote-details>
+                                <app-quote-details *ngIf="quote.Info" (isRead)='quoteDelete($event,i)'></app-quote-details>
                             </div>
                         </div>
                     </div>
