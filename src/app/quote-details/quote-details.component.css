@@ -1,4 +1,5 @@
 .detail{
-    padding: 3px;
     /* justify-content: space-around; */
+    flex-direction: row;
+    display: flex;
 }

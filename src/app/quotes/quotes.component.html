@@ -34,7 +34,7 @@
                                     <h6 class="card-subtitle mb-2 text-muted"> --{{quote.author}}-- </h6>                                    
                                     <span class="card-subtitle mb-2">By: <span id="name">{{quote.name}}</span><br>
                                     <span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
-                                    <br><br><button (click)='displayInfo(i)' class="btn btn-info btn-sm text-center" id="quotes-button" >See More</button>
+                                    <br><br><button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >See More</button>
                                     <div>
                                         <app-quote-details *ngIf="quote.Info" (isRead)='quoteDelete($event,i)'></app-quote-details>
                                     </div>
