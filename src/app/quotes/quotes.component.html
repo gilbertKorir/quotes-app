@@ -25,13 +25,15 @@
                         <app-quotes-form (add)="addedQuote($event)"></app-quotes-form>
                     </div>
                     <div class="card mx-5 pt-5 text-center text-black" style="width: 600px;">
-                        <div *ngFor="let quote of myQuotes; let i= index">
-                            <div class="card-body">
-                                <h4 class="card-title" appHighlightQoute >{{quote.title}}</h4>
-                                <p class="card-text" id="param">{{quote.quote}}</p>
-                                <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
-                                <br><br><button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >See More</button>
-                                <app-quote-details *ngIf="quote.Info" (isRead)='quoteDelete($event,i)'></app-quote-details>
+                        <div class="all-cards">
+                            <div *ngFor="let quote of myQuotes; let i= index" class="card" style="width: 24rem;">
+                                <div class="card-body">
+                                    <h4 class="card-title" appHighlightQoute >{{quote.title}}</h4>
+                                    <p class="card-text" id="param">{{quote.quote}}</p>
+                                    <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
+                                    <br><br><button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >See More</button>
+                                    <app-quote-details *ngIf="quote.Info" (isRead)='quoteDelete($event,i)'></app-quote-details>
+                                </div>
                             </div>
                         </div>
                     </div>
