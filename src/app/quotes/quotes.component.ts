@@ -20,7 +20,7 @@ populars:Quotes[] = [
 
   get myQuotes(){
     return this.quotes.sort((a,b)=>{
-      return <any>new Date(b.datePosted) - <any>new Date(a.datePosted);
+      return <any> b.likes - <number> a.dislikes;
     });
   }
   addedQuote(quote: Quotes){
