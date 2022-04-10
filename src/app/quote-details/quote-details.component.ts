@@ -11,15 +11,15 @@ export class QuoteDetailsComponent implements OnInit {
   deleteQuote(read:boolean){
     this.isRead.emit(read);
   }
-  upvotes: number = 0;
+  likes: number = 0;
   upvote(){
-    this.upvotes++;
+    this.likes++;
     // var up=this.quotes[index].likes+1;
     // this.quotes[index].likes=up;
   }
-  downvotes: number = 0;
+  dislikes: number = 0;
   downvote(){
-    this.downvotes++;
+    this.dislikes++;
   }
 
   constructor() { }

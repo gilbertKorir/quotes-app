@@ -26,14 +26,14 @@
                     </div>
                     <div class="mx-2 pt-5 text-black">
                         <div class="all-cards">
-                            <div *ngFor="let quote of myQuotes; let i= index" class="card" style="width: 24rem;">
+                            <div *ngFor="let quote of myQuotes; let i= index" class="card" style="width: 25rem;">
                                 <div class="card-body ">
                                     <span id="when" style="float: right;">{{quote.datePosted|datePipe}} days ago.</span>
                                     <h4 class="card-title pt-3" appHighlightQoute>{{quote.title}}</h4>
-                                    <p class="card-text pt-3" id="param" >{{quote.quote}}</p>
+                                    <p class="card-text pt-3 pt-2 pb-3" style="font-style: italic; font-size: 20px;" id="param" >"...{{quote.quote}}..."</p>
                                     <h6 class="card-subtitle mb-2 text-center text-muted"> --{{quote.author}}-- </h6>                                    
-                                    <span class="card-subtitle mb-2">By: <span id="name">{{quote.name}}</span>
-                                    <span id="date">on: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
+                                    <span class="card-subtitle mb-2" style="color: green;">By: <span id="name">{{quote.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span id="date" style="color: magenta;">Posted: <span id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
                                     <p class="text-center pt-3 pb-2"><button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >See More</button></p>
                                     <div>
                                         <app-quote-details *ngIf="quote.Info" (isRead)='quotoDelete($event,i)'></app-quote-details>

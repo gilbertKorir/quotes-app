@@ -29,7 +29,7 @@ populars:Quotes[] = [
     quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
   }
-  quotoDelete(isRead: any, index: number){
+  quotoDelete(isRead: boolean, index:number){
     if (isRead) {
       let toDelete = confirm(`Are you sure you want to delete this Quote?`)
       if(toDelete){
@@ -39,10 +39,8 @@ populars:Quotes[] = [
     }
   }
   mostPopular(){
-
-  
     this.populars.splice(0,this.populars.length);
-  
+
     var largest=this.quotes[0].likes;
     var number=null;
     for (var i=0;i<this.quotes.length;i++){
@@ -58,10 +56,20 @@ populars:Quotes[] = [
       }
     }
   
-    
-  
   }
- 
+  index: number;
+  // likes: number = 0;
+  upvote(){
+    // this.likes++;
+    var up=this.quotes[this.index].likes+1;
+    this.quotes[this.index].likes=up;
+  }
+  // dislikes: number = 0;
+  downvote(){
+    var down=this.quotes[this.index].likes+1;
+    this.quotes[this.index].likes=down;
+    // this.dislikes++;
+  }
   displayInfo(index: number){
     this.quotes[index].Info = !this.quotes[index].Info;
   }

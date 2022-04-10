@@ -1,27 +1,28 @@
 <div class="container-fluid">
     <!-- <hr> -->
-    <form (ngSubmit)="addQuote() ; quotesForm.resetForm({})" #quotesForm="ngForm">
+    <form (ngSubmit)="addQuote() ; quotesForm.resetForm({})" #quotesForm="ngForm"
+    name="loginform" ng-submit="loginform.$valid && login.submit()">
         <div class="row">
             <div class="col-sm-5">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" required class="form-control" id="name" minlength="3"[(ngModel)]="quoted.name" name="title" #title = "ngModel">
-                    <!-- <div  class="alert alert-danger">
-                      <div>
-                          Your name is required.
-                      </div>
-                    </div>  -->
-                  </div>
+                    <input type="text" class="form-control" id="name" minlength="3"[(ngModel)]="quoted.name" name="title" #title = "ngModel" required>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                        <p *ngIf="name.errors?.['required']">
+                             Name is required.
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-5">
                 <div class="form-group">
                     <label for="name">Quote Tittle</label>
-                    <input type="text" required class="form-control" id="title" [(ngModel)]="quoted.title" name="name" #name = "ngModel">
-                    <!-- <div class="alert alert-danger">
-                      <div>
-                          Title is required.
-                      </div>
-                    </div> -->
+                    <input type="text" required class="form-control" id="title" [(ngModel)]="quoted.title" name="name" #name = "ngModel" required="">
+                    <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                        <p *ngIf="title.errors?.['required']">
+                             Quote <title></title> is required.
+                        </p>
+                    </div>
                   </div>
           
             </div>
@@ -30,30 +31,30 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <label for="description">Quote</label>
-                    <textarea class="form-control" id="quote" rows="2" required name="quote" [(ngModel)]="quoted.quote" name="quote" #quote = "ngModel"></textarea>
-                    <!-- <div class="alert alert-danger">
-                      <div>
-                          Quote can not be empty.
-                      </div>
-                    </div> -->
+                    <textarea class="form-control" id="quote" rows="2" required name="quote" [(ngModel)]="quoted.quote" name="quote" #quote = "ngModel" required></textarea>
+                    <div *ngIf="quote.invalid && (quote.dirty || quote.touched)" class="alert alert-danger">
+                        <p *ngIf="quote.errors?.['required']">
+                             Quote is required.
+                        </p>
+                    </div>
                   </div>
             </div>
             <div class="col-sm-5">
                 <div class="form-group">
                     <label for="name">Quote Author</label>
-                    <input type="text" required class="form-control" id="author" name="author" [(ngModel)]="quoted.author" name="author" #author = "ngModel">
-                    <!-- <div class="alert alert-danger">
-                      <div>
-                          Author Name is required.
-                      </div>
-                    </div> -->
+                    <input type="text" required author = "true" class="form-control" id="author" name="author" [(ngModel)]="quoted.author" name="author" #author = "ngModel" required>
+                    <div *ngIf="author.invalid && (author.dirty || author.touched)" class="alert alert-danger">
+                        <p *ngIf="author.errors?.['required']">
+                             Author is required.
+                        </p>
+                    </div>
                   </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-12 text-center pb-3 pt-3">
-                <button type="submit" class="p-3 btn btn-sm btn-success">Add Quote</button>
+                <button type="submit" class="p-3 btn btn-sm btn-success" >Add Quote</button>
             </div>
         </div>
     </form>
