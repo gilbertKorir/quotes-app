@@ -5,7 +5,7 @@
 }
 .cover-container{
     height: auto;
-    background: url('/assets/images/bng.jpeg'), rgb(231, 228, 221);
+    background: url('https://github.com/gilbertKorir/quotes-app/blob/master/src/assets/images/bng.jpeg'), rgb(231, 228, 221);
     background-size: cover;
 }
 .first-quote, .links{
