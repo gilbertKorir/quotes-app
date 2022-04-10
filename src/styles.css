@@ -4,4 +4,5 @@ body{
     height: auto;
     background: url('./assets/images/bng.jpeg'), rgb(107, 107, 185);
     background-size: cover;
+    background-attachment:scroll;
 }
