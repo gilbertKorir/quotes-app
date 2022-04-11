@@ -33,10 +33,10 @@ populars:Quotes[] = [
     quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
   }
-  quotoDelete(isRead: boolean, index:number){
+  myDelete(isRead: boolean, index:number){
     if (isRead) {
-      let toDelete = confirm(`Are you sure you want to delete this Quote?`)
-      if(toDelete){
+      let Delete = confirm(`Are you sure you want to delete this Quote?`)
+      if(Delete){
         this.quotes.splice(index,1);
       }
     
@@ -76,7 +76,7 @@ populars:Quotes[] = [
     // this.quotes[this.index].likes=down;
     // this.dislikes++;
   }
-  displayInfo(index: number){
+  displayData(index: number){
     this.quotes[index].Info = !this.quotes[index].Info;
   }
   

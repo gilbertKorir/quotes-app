@@ -9,7 +9,7 @@ export class DatePipePipe implements PipeTransform {
     let today:Date = new Date();
     let todayWithNoTime:any = new Date(today.getFullYear(),today.getMonth(),today.getDate())
     var dateDifference =Math.abs(todayWithNoTime - value)
-    const secondsInADay= 86400;
+    const secondsInADay= 10000;
 
     var dateDifferenceSeconds=dateDifference*0.001; 
     var dateCounter = dateDifferenceSeconds/secondsInADay;

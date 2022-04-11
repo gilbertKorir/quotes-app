@@ -74,7 +74,7 @@ populars:Quotes[] = [
     this.quotes[this.index].likes=down;
     // this.dislikes++;
   }
-  displayInfo(index: number){
+  displayData(index: number){
     this.quotes[index].Info = !this.quotes[index].Info;
   }
   
