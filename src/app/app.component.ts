@@ -11,11 +11,11 @@ export class AppComponent {
   public quotes:Quotes[] = [
     new Quotes (1,'Jared','Living','The greatest glory in living lies not in never falling, but in rising every time we fall.','Nelson Mandela', new Date(2019,7,12),0,0),
     new Quotes (2,'Zimmer man','Hardwork','The way to get started is to quit talking and begin doing.','Walt Disney',new Date(2019,7,14),6,0),
-    new Quotes (3,'Dan J','Facts of Life','Life is what happens when you are busy making other plans.','John Lennon',new Date(2019,6,3),0,0),
+    new Quotes (3,'Dan J','Facts of Life','Life is what happens when you are busy making other plans.','John Lennon',new Date(2019,6,3),7,0),
   ];
 
 populars:Quotes[] = [
-  new Quotes (1,'Jared','Living','The greatest glory in living lies not in never falling, but in rising every time we fall.','Nelson Mandela', new Date(2019,7,12),20,6),
+  new Quotes (1,'Jared','Living','The greatest glory in living lies not in never falling, but in rising every time we fall.','Nelson Mandela', new Date(2019,7,12),1000,6),
     // new Quotes (2,'Zimmer man','Hardwork','The way to get started is to quit talking and begin doing.','Walt Disney',new Date(2019,7,14),10,5),
 ]
 
@@ -24,7 +24,7 @@ populars:Quotes[] = [
       return <any> new Date(b.datePosted) - <any> new Date(a.datePosted);
     });
   }
-  arr: number[] = this.quotes.map(popular => popular.likes)
+  arr: number[] = this.quotes.map(quotes => quotes.likes)
   highest = Math.max(...this.arr);
 
   addedQuote(quote: Quotes){
@@ -62,16 +62,18 @@ populars:Quotes[] = [
   
   }
   index: number;
-  // likes: number = 0;
+   likes: number = 5;
   upvote(){
     // this.likes++;
-    var up=this.quotes[this.index].likes+1;
-    this.quotes[this.index].likes=up;
+    this.likes++;
+    // var up=this.quotes[index].likes+1;
+    // this.quotes[this.index].likes=up;
   }
   // dislikes: number = 0;
   downvote(){
-    var down=this.quotes[this.index].likes+1;
-    this.quotes[this.index].likes=down;
+    this.quotes[this.index].dislikes++;
+    // var down=this.quotes[this.index].likes+1;
+    // this.quotes[this.index].likes=down;
     // this.dislikes++;
   }
   displayInfo(index: number){
