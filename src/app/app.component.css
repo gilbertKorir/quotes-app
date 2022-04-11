@@ -1,0 +1,42 @@
+/* form{
+    background-color: blue;
+} */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* .cover-container{
+    height: auto;
+    background: url('/src/assets/images/bng.jpeg'), rgb(107, 107, 185);
+    background-size: cover;
+
+} */
+.first-quote, .links{
+    height: 500px;
+    
+}
+#wangari{
+    border-radius: 42%;
+     width: 250px;
+    height: 200px;
+
+}
+
+.links a{
+    padding: 10px
+}
+.all-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    margin-bottom: 2%;
+    /* background-color: aliceblue; */
+    box-shadow: 2px 2px 3px 2px black;
+  }
+  #quotes-button{
+      text-align: center;
+  }

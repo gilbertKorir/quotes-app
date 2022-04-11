@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{Quotes} from '../quotes'
+// import { HighlightDirective } from '@angular/core'
 
 @Component({
   selector: 'app-quotes',
@@ -7,9 +8,9 @@ import{Quotes} from '../quotes'
   styleUrls: ['./quotes.component.css']
 })
 export class QuotesComponent implements OnInit {
-  quotes:Quotes[] = [
+ public quotes:Quotes[] = [
     new Quotes (1,'Jared','Living','The greatest glory in living lies not in never falling, but in rising every time we fall.','Nelson Mandela', new Date(2019,7,12),0,0),
-    new Quotes (2,'Zimmer man','Hardwork','The way to get started is to quit talking and begin doing.','Walt Disney',new Date(2019,7,14),0,0),
+    new Quotes (2,'Zimmer man','Hardwork','The way to get started is to quit talking and begin doing.','Walt Disney',new Date(2019,7,14),6,0),
     new Quotes (3,'Dan J','Facts of Life','Life is what happens when you are busy making other plans.','John Lennon',new Date(2019,6,3),0,0),
   ];
 
@@ -23,6 +24,9 @@ populars:Quotes[] = [
       return <any> new Date(b.datePosted) - <any> new Date(a.datePosted);
     });
   }
+  // arr: number[] = this.populars.map(popu=>quote.likes)
+  // highest = Math.max(...this.arr);
+
   addedQuote(quote: Quotes){
     let arraysize = this.quotes.length;
     quote.id = arraysize+1;
@@ -35,7 +39,7 @@ populars:Quotes[] = [
       if(toDelete){
         this.quotes.splice(index,1);
       }
-      
+    
     }
   }
   mostPopular(){
