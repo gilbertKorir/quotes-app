@@ -42,6 +42,15 @@
 * ANGULAR
 * BOOTSTRAP
 
+## Installations
+
+* Open Terminal {Ctrl+Alt+T}
+
+* git clone https://github.com/gilbertKorir/quotes-app.git
+
+* cd Quotes-app
+
+* code . or atom . based on the text editor you have.
 
 ## Reference
 
