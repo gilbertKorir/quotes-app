@@ -48,13 +48,13 @@
 
 * git clone https://github.com/gilbertKorir/quotes-app.git
 
-* cd Quotes-app
+* cd quotes-app
 
 * code . or atom . based on the text editor you have.
 
 ## Reference
 
-* HTML and Vanilla CSS, Bootstrap and JavaScript.
+* HTML and Vanilla CSS, Bootstrap and JavaScript and Angular.
 
 [Back to the top](#quotes-app)
 
